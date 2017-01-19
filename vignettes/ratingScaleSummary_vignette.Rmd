@@ -49,6 +49,9 @@ the examples that incorporate group comparisson.
 
 ```{r}
 df <- data.frame(replicate(6,sample(as.character(1:7), 2000, replace = T, prob = sample(1:100/100, 7))))
+var_names <- lapply(1:6, FUN = function(x) paste(sample(letters, sample(6:13, 1)), collapse = ""))
+names(df) <- var_names
+
 g <- sample(c("G1", "G2", "G3"), 2000, replace = T)
 ```
 
@@ -107,9 +110,7 @@ vert_line_gg(x = res_comp, max_val = 7)
 ```{r, fig.height=5, fig.width=7}
 library(ggthemes)
 vert_line_gg(x = res["Median"], max_val = 7) +  theme_hc()
-
 vert_line_gg(x = res_comp, max_val = 7) + theme_wsj()
-
 ```
 
 
