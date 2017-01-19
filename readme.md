@@ -17,10 +17,17 @@ The functions in this package produce output that is supposed to be easily integ
 RMarkdown and knitr files. All tabular outputs are **data frames** which integrate nicely into your
 workflow.
 
+The plots created by this package could be called 'vertical-line-(dot) plots' (If there is another
+or a better name, please let me know!). Vertical-line plots can be understood intuitivly, since
+they resemble the structure of a typical rating scale layout, as it is presented to the survey 
+participants. When used for group comparison vertical-line plots give a quick insight into the 
+variables that 'stir controversy' between the groups, or which don't.
+
+
 ## Install Package
 
-For now the ratingSclaeSummary package is not available on CRAN, but it can be
-installed directly from github from within R using the devtools package
+For now the ratingScaleSummary package is not available on CRAN, but it can be
+installed directly from github within R using the devtools package:
 
     devtools::install_github('ratingScaleSummary/tilltnet')
 
@@ -31,7 +38,7 @@ or by using the source package for a local install.
 We start with creating some sample data, that will be used throughout this
 vignette. We'll need a *data.frame* consisting of several variables, all using the
 same categories. In addition we create a grouping variable, that is used for
-the examples that incorporate group comparisson.
+the examples that incorporate group comparison.
 
 
 ```r
@@ -117,9 +124,9 @@ knitr::kable(res_comp)
 |phausnzkorxi    | 4.500 | 4.807 |4.464  |n.s.  |
 |fbixvpyjac      | 5.402 | 5.301 |5.202  |n.s.  |
 
-## Visualise the comparisson
+## Visualise the comparison
 
-vert_line_base() and vert_line_gg() also produce plots for group comparisson.
+vert_line_base() and vert_line_gg() also produce plots for group comparison.
 
 
 ```r
