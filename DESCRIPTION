@@ -1,0 +1,18 @@
+Package: ratingScaleSummary
+Type: Package
+Title: Summarise and visualise rating scales consisting of several equally coded sub-scales.
+Version: 0.1.0
+Author: Till Krenz
+Maintainer: Till Krenz <public@tillt.net>
+Description: Summarise, visualise and group-compare rating scales consisting of several equally coded sub-scales.
+    The package also includes facilities for the calculation of interpolated median and percentile values of grouped frequency distributions.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Suggests:
+  ggplot2,
+  testthat
+Imports:
+  questionr,
+  Hmisc
+RoxygenNote: 5.0.1
