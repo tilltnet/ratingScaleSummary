@@ -113,14 +113,14 @@ res_comp <- rs_compare_groups(df = df, groups = g)
 knitr::kable(res_comp)
 ```
 
-|                |    G1  |    G2   |   G3  |sig  
-|:-------------- |: ------|:  ------|:------|:-----
-|hsglau          | 3.213  | 3.239   |3.219  |n.s. 
-|nthdroqjfswke   | 4.086  | 3.947   |4.090  |n.s. 
-|waqxgklind      | 4.142  | 4.233   |4.149  |n.s. 
-|nceiurbskaphy   | 4.495  | 4.732   |4.817  |n.s. 
-|phausnzkorxi    | 4.500  | 4.807   |4.464  |n.s. 
-|fbixvpyjac      | 5.402  | 5.301   |5.202  |n.s. 
+|                |    G1 |    G2 |   G3  |sig   |
+|:-------------- |------:|------:|------:|-----:|
+|hsglau          | 3.213 | 3.239 |3.219  |n.s.  |
+|nthdroqjfswke   | 4.086 | 3.947 |4.090  |n.s.  |
+|waqxgklind      | 4.142 | 4.233 |4.149  |n.s.  |
+|nceiurbskaphy   | 4.495 | 4.732 |4.817  |n.s.  |
+|phausnzkorxi    | 4.500 | 4.807 |4.464  |n.s.  |
+|fbixvpyjac      | 5.402 | 5.301 |5.202  |n.s.  |
 
 ## Visualise the comparisson
 
