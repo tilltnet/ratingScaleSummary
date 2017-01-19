@@ -14,8 +14,8 @@ x_tab(x, y, weight = NULL, p_max = 0.05)
 \item{w}{Optional weight vector.}
 }
 \description{
-Returns a \emph{data.frame} where each row shows the
-frequencies of unique values in a vector. Weighting is supported.
+Returns a \emph{data.frame} as a crosstable with indication of
+statistic significance using chi-square. Weighting is supported.
 }
 \examples{
 # Create sample data.

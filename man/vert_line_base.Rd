@@ -24,7 +24,7 @@ vert_line_gg(x, max_val = NULL, min_val = 1)
 \item{scale_interval}{default = 1}
 }
 \description{
-Dotcharts of categorial variables
+Plots a vertical line dot plot using base plotting or ggplot2.
 }
 \section{Functions}{
 \itemize{
@@ -33,7 +33,9 @@ for usage of ggplot2's theming.
 }}
 \examples{
 # Create sample data.
-df <- data.frame(replicate(6,sample(1:7, 100, replace = T)))
+df <- data.frame(replicate(6,
+                           sample(as.character(1:7), 200, replace = T,
+                           prob = sample(1:100/100, 7))))
 
 # Plot medians of several variables.
 res <- rs_summary(df = df)

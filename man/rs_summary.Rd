@@ -18,7 +18,7 @@ rs_summary(df, item_labels = NULL, item_levels = NULL, l_mar = 12,
 }
 \description{
 Returns a \emph{data.frame} where each row
-represents one variable. It provides categories' frequencies,
+represents one variable. It provides categories' frequencies (in %),
 N, median, and the interquartile range.
 }
 \examples{
