@@ -1,0 +1,127 @@
+---
+title: "Analysing and visualising rating scales in R using ratingScaleSummary"
+author: "Till Krenz"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# ratingScaleSummary
+
+This package is supposed to give a fast and useful summary and visualisation
+of a rating scale, consisting of several variables using the same categories/
+codings. These procedures might be useful for social scientists and psychologists
+and everyone else working with data collected via surveys making use of the the
+concept of multiple indicators for the measurment of dimensions of abstract or
+complex social concepts and terms. 
+
+In addition there are functions for calculating the interpolated median
+and percentiles of a grouped frequency distribution, the inter quartile range,
+and relative frequency and cross tables. The latter functions produce data
+frames, the output is therefore modified and reused much easier, than the
+outputs created by, e.g. the functions of the package 'descr'. The functions in
+this package produce output that is supposed to be easily integrated into
+RMarkdown and knitr files.
+
+# Install Package
+
+For now the ratingSclaeSummary package is not available on CRAN, but it can be
+installed driectly from github from within R using the devtools package
+
+    devtools::install_github('ratingScaleSummary/tilltnet')
+
+or by using the source package for a local install.
+
+# Let's get started: creating sample data
+
+We start with creating some sample data, that will be used throughout this
+vignette. We'll need a *data.frame* consisting of several variables, all using the
+same categories. In addition we create a grouping variable, that is used for
+the examples that incorporate group comparisson.
+
+```{r}
+df <- data.frame(replicate(6,sample(as.character(1:7), 2000, replace = T, prob = sample(1:100/100, 7))))
+g <- sample(c("G1", "G2", "G3"), 2000, replace = T)
+```
+
+
+# Summarise a rating scale
+
+rs_summary() returns a **data.frame** where each row
+represents one variable. It provides categories' frequencies (in %),
+N, median, and the interquartile range.
+```{r}
+library(ratingScaleSummary)
+res <- rs_summary(df = df)
+knitr::kable(res)
+```
+
+The rs_summary() command gives a summary of the
+
+## Visualise medians of a rating scale
+
+vert_line_base() and vert_line_gg() plots a vertical line dot plot using base plotting or ggplot2.
+
+```{r, fig.height=5, fig.width=7}
+# Using base plot.
+vert_line_base(x = res["Median"], max_val = 7)
+# Using ggplot2.
+vert_line_gg(x = res["Median"], max_val = 7)
+```
+
+# Compare the responses to a rating scale by groups
+
+Returns a **data.frame** where each row represents one variable
+and the columns show the median values of the comparison groups. An additional
+colum shows the significance levels, based on the **Kruskal-Wallis** **Rank**
+**Sum** **Test**.
+
+
+```{r}
+# Compare medians between groups accross several variables.
+res_comp <- rs_compare_groups(df = df, groups = g)
+knitr::kable(res_comp)
+```
+
+## Visualise the comparisson
+
+vert_line_base() and vert_line_gg() also produce plots for group comparisson.
+
+```{r, fig.height=5, fig.width=7}
+# Using base plot.
+vert_line_base(x = res_comp, max_val = 7)
+# Using ggplot2.
+vert_line_gg(x = res_comp, max_val = 7)
+```
+
+# Using ggplot2 theming
+
+```{r, fig.height=5, fig.width=7}
+library(ggthemes)
+vert_line_gg(x = res["Median"], max_val = 7) +  theme_hc()
+
+vert_line_gg(x = res_comp, max_val = 7) + theme_wsj()
+
+```
+
+
+# Miscellaneous functions within the package
+
+ - gmedian() calculates the interpolated median of a grouped
+   frequency distribution.
+ - intQR() calculates interquartile range of a grouped frequency
+   distribution.
+ - mQ() Calculates halfed interquartile range [german: mittlerer 
+   Quartilsabstand] of a grouped frequency distribution
+ - f_tab() returns a \emph{data.frame} where each row shows the
+   frequencies of unique values in a vector. Weighting is supported.
+ - x_tab() returns a \emph{data.frame} as a crosstable with indication of 
+   statistic significance using chi-square. Weighting is supported.
