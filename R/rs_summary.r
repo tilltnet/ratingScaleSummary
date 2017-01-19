@@ -1,7 +1,7 @@
 #' Summarize a questionaire battery of equally coded ordinal/ categorial variables
 #'
 #' @description Returns a \emph{data.frame} where each row
-#' represents one variable. It provides categories' frequencies,
+#' represents one variable. It provides categories' frequencies (in %),
 #' N, median, and the interquartile range.
 #' @param df data.frame containing the variables
 #' @param item_labels vector of variable names

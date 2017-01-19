@@ -1,7 +1,7 @@
 #' Frequency distribution as a data.frame
 #'
-#' @description Returns a \emph{data.frame} where each row shows the
-#' frequencies of unique values in a vector. Weighting is supported.
+#' @description Returns a \emph{data.frame} as a crosstable with indication of
+#' statistic significance using chi-square. Weighting is supported.
 #'
 #' @param x Numeric, character or factor vector, defining the dependent variable.
 #' @param y Numeric, character or factor vector, defining groups/ independent variable.

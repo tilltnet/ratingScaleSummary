@@ -1,5 +1,6 @@
 #' Dotcharts of categorial variables
 #'
+#' @description Plots a vertical line dot plot using base plotting or ggplot2.
 #' @param x data.frame containing the variables
 #' @param max_val Absolute scale end as a numeric value.
 #' @param min_val Absolute scale start as a numeric value; default = 1
@@ -8,7 +9,9 @@
 #' @param scale_interval default = 1
 #' @examples
 #' # Create sample data.
-#' df <- data.frame(replicate(6,sample(1:7, 100, replace = T)))
+#' df <- data.frame(replicate(6,
+#'                            sample(as.character(1:7), 200, replace = T,
+#'                            prob = sample(1:100/100, 7))))
 #'
 #' # Plot medians of several variables.
 #' res <- rs_summary(df = df)
