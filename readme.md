@@ -1,9 +1,7 @@
 # Analysing and visualising rating scales in R using ratingScaleSummary
 
-## ratingScaleSummary
-
-This package is supposed to give a fast and useful summary and visualisation
-of a rating scale, consisting of several variables using the same categories/
+ratingScaleSummary provides tools for quick analysis and visualisation of rating scales,
+consisting of several variables using the same categories/
 codings. These procedures might be useful for social scientists and psychologists
 and everyone else working with data collected via surveys making use of the the
 concept of multiple indicators for the measurment of dimensions of abstract or
@@ -13,9 +11,11 @@ In addition there are functions for calculating the interpolated median
 and percentiles of a grouped frequency distribution, the inter quartile range,
 and relative frequency and cross tables. The latter functions produce data
 frames, the output is therefore modified and reused much easier, than the
-outputs created by, e.g. the functions of the package 'descr'. The functions in
-this package produce output that is supposed to be easily integrated into
-RMarkdown and knitr files.
+outputs created by, e.g. the functions of the package 'descr'.
+
+The functions in this package produce output that is supposed to be easily integrated into
+RMarkdown and knitr files. All tabular outputs are **data frames** which integrate nicely into your
+workflow.
 
 ## Install Package
 
@@ -161,7 +161,7 @@ vert_line_gg(x = res_comp, max_val = 7) + theme_wsj()
    distribution.
  - mQ() Calculates halfed interquartile range [german: mittlerer 
    Quartilsabstand] of a grouped frequency distribution
- - f_tab() returns a \emph{data.frame} where each row shows the
+ - f_tab() returns a **data frame** where each row shows the
    frequencies of unique values in a vector. Weighting is supported.
- - x_tab() returns a \emph{data.frame} as a crosstable with indication of 
+ - x_tab() returns a **data frame** as a crosstable with indication of 
    statistic significance using chi-square. Weighting is supported.
