@@ -9,21 +9,17 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-ratingScaleSummary provides tools for quick analysis and visualisation of rating scales,
-consisting of several variables using the same categories/
-codings. These procedures might be useful for social scientists and psychologists
-and everyone else working with data collected via surveys making use of the the
-concept of multiple indicators for the measurment of dimensions of abstract or
-complex social concepts and terms. 
+ratingScaleSummary provides tools for quick analysis and visualisation of rating 
+scales, consisting of equally coded sub-scales. These procedures might be useful 
+for social scientists and psychologists and everyone else working with data 
+collected via surveys making use of the the concept of multiple indicators for
+the measurment of dimensions of abstract or complex social concepts and terms. 
 
 In addition there are functions for calculating the interpolated median
 and percentiles of a grouped frequency distribution, the inter quartile range,
-and relative frequency and cross tables. The latter functions produce data
-frames, the output is therefore modified and reused much easier, than the
-outputs created by, e.g. the functions of the package 'descr'.
-
-The functions in this package produce output that is supposed to be easily integrated into
-RMarkdown and knitr files. All tabular outputs are **data frames** which integrate nicely into your
+and relative frequency and cross tables. The functions in this package produce 
+output that is supposed to be easily integrated into RMarkdown and knitr files. 
+All tabular outputs are **data frames** which integrate nicely into your
 workflow.
 
 The plots created by this package could be called 'vertical-line-(dot) plots' (If there is another
@@ -31,7 +27,6 @@ or a better name, please let me know!). Vertical-line plots can be understood in
 they resemble the structure of a typical rating scale layout, as it is presented to the survey 
 participants. When used for group comparison vertical-line plots give a quick insight into the 
 variables that 'stir controversy' between the groups, or which don't.
-
 # Install Package
 
 For now the ratingScaleSummary package is not available on CRAN, but it can be
